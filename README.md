@@ -14,12 +14,12 @@ If you want to process the raw data, go to step A. If you want to start from the
 
 ## A.Start from the raw data
 Create the accumulated CSV and delta CSV
-1 Go to directory dataprocess. Open dataprep.sh, change TopDataPrep (at the beginning of the file) to {path to the raw data}
-2 chmod +x dataprep.sh
-3 ./dataprep.sh # It may take a long time (e.g. one or two days)to build two csv directory (csv_acc and csv_del)
+1 Go to directory dataprocess. Open dataprep.sh, change TopDataPrep (at the beginning of the file) to {path to the raw data}  
+2 chmod +x dataprep.sh  
+3 ./dataprep.sh  Notice, it may take a long time (e.g. one or two days)to build two csv directory (csv_acc and csv_del)    
 
 ## B.Use the existing CSV directory to analysis
-1 Go to directory engine
-2 python main.py
+1 Go to directory engine  
+2 python main.py  
 
 

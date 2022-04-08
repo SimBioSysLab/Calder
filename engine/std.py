@@ -33,7 +33,10 @@ def StandardDeviation(X,X_std,std_n=2):
         print("div bigger than "+str(std_n)+" std features ",len(exclude_zero_std),exclude_zero_std)
         for d in exclude_zero_std:
             std_features.add(d)
-    print(len(zero_column),zero_column)
+
+    # The features that some parent applications have zero values(std==0)
+    print(len(zero_column),zero_column) 
+     # All the unique features that contribute to the dissimilarity of the proxy and parent pairs
     print(len(std_features),std_features)
                 
 

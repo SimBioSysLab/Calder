@@ -54,6 +54,7 @@ def simi_cosine(X,f):
     ax.set_yticklabels(Appname,rotation=0) 
     ax.set_xticklabels(Appname, ha="right",rotation=40) 
     ax.set_title("sky cosine similarity "+f)
+    plt.savefig("sky cosine similarity "+f)
 
 
 def simi_JS(X,f):
@@ -80,8 +81,9 @@ def simi_JS(X,f):
     ax = sns.heatmap(jsd,mask=mask,annot=True,fmt='.0f',annot_kws={'size':20},cbar=True,linewidths=.5,cmap="RdYlGn_r",vmax=90,vmin=0)
     ax.set_yticklabels(Appname,rotation=0) 
     ax.set_xticklabels(Appname, ha="right",rotation=40) 
-    ax.set_title("sky JS-divergence "+f)  
-    return jsd 
+    ax.set_title("sky JS-divergence "+f)
+    plt.savefig("sky JS-divergence "+f)  
+    
 
 def simi_wd(X,f):
     ''' 
@@ -109,6 +111,7 @@ def simi_wd(X,f):
     ax.set_yticklabels(Appname,rotation=0) 
     ax.set_xticklabels(Appname, ha="right",rotation=40) 
     ax.set_title("sky Wasserstein distance "+f)
+    plt.savefig("sky Wasserstein distance "+f)  
 
 def simi_pca_mahalanobis(X,f):
     ''' 
@@ -140,6 +143,7 @@ def simi_pca_mahalanobis(X,f):
     ax.set_yticklabels(Appname,rotation=0) 
     ax.set_xticklabels(Appname, ha="right",rotation=40) 
     ax.set_title("sky pca + Mahalanobis "+f)
+    plt.savefig("sky pca + Mahalanobis "+f) 
 
 def simi_kpca_cosine(X,f):
     ''' 
@@ -162,7 +166,8 @@ def simi_kpca_cosine(X,f):
     ax = sns.heatmap(degree,annot=True,fmt=".0f",cbar=False,linewidths=.5,cmap="RdYlGn_r",vmax=120, vmin=0) #only show the integer instead of float
     ax.set_yticklabels(Appname,rotation=0) 
     ax.set_xticklabels(Appname, ha="right",rotation=40) 
-    ax.set_title("sky kpac + cosine "+f)   
+    ax.set_title("sky kpac + cosine "+f) 
+    plt.savefig("sky kpac + cosine "+f)   
 
 def simi_hierachical(X,f):
     ''' 
@@ -184,4 +189,4 @@ def simi_hierachical(X,f):
                 show_leaf_counts=True)
     plt.xticks(fontsize=20,ha='right')
     plt.title("sky hierachical "+f)
-    plt.show()
+    plt.savefig("sky hierachical "+f)

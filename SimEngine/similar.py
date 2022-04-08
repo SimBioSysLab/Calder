@@ -54,7 +54,7 @@ def simi_cosine(X,f):
     ax.set_yticklabels(Appname,rotation=0) 
     ax.set_xticklabels(Appname, ha="right",rotation=40) 
     ax.set_title("sky cosine similarity "+f)
-    plt.savefig("sky cosine similarity "+f)
+    plt.savefig("paper_graphs/sky cosine similarity "+f)
 
 
 def simi_JS(X,f):
@@ -82,7 +82,7 @@ def simi_JS(X,f):
     ax.set_yticklabels(Appname,rotation=0) 
     ax.set_xticklabels(Appname, ha="right",rotation=40) 
     ax.set_title("sky JS-divergence "+f)
-    plt.savefig("sky JS-divergence "+f)  
+    plt.savefig("paper_graphs/sky JS-divergence "+f)  
     
 
 def simi_wd(X,f):
@@ -111,7 +111,7 @@ def simi_wd(X,f):
     ax.set_yticklabels(Appname,rotation=0) 
     ax.set_xticklabels(Appname, ha="right",rotation=40) 
     ax.set_title("sky Wasserstein distance "+f)
-    plt.savefig("sky Wasserstein distance "+f)  
+    plt.savefig("paper_graphs/sky Wasserstein distance "+f)  
 
 def simi_pca_mahalanobis(X,f):
     ''' 
@@ -143,7 +143,7 @@ def simi_pca_mahalanobis(X,f):
     ax.set_yticklabels(Appname,rotation=0) 
     ax.set_xticklabels(Appname, ha="right",rotation=40) 
     ax.set_title("sky pca + Mahalanobis "+f)
-    plt.savefig("sky pca + Mahalanobis "+f) 
+    plt.savefig("paper_graphs/sky pca + Mahalanobis "+f) 
 
 def simi_kpca_cosine(X,f):
     ''' 
@@ -167,7 +167,7 @@ def simi_kpca_cosine(X,f):
     ax.set_yticklabels(Appname,rotation=0) 
     ax.set_xticklabels(Appname, ha="right",rotation=40) 
     ax.set_title("sky kpac + cosine "+f) 
-    plt.savefig("sky kpac + cosine "+f)   
+    plt.savefig("paper_graphs/sky kpac + cosine "+f)   
 
 def simi_hierachical(X,f):
     ''' 
@@ -189,4 +189,4 @@ def simi_hierachical(X,f):
                 show_leaf_counts=True)
     plt.xticks(fontsize=20,ha='right')
     plt.title("sky hierachical "+f)
-    plt.savefig("sky hierachical "+f)
+    plt.savefig("paper_graphs/sky hierachical "+f)

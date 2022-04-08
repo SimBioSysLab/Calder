@@ -14,6 +14,9 @@ if __name__ == "__main__":
           "Frontend","Instruction_Cache","Instruction_Mix","L1_D_Cache",
           "L2_D_Cache","L3_D_Cache","Memory_Pipeline","Misc","Power","Retirement_Pipeline",
           "Memory"]
+    if not os.path.exists("./paper_graphs"):
+        #Create a new directory if not exist
+        os.makedirs("./paper_graphs")
 
     # Using different similarity algorithms to show similarity matrices using all features
     for g in groupss[:1]:

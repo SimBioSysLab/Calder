@@ -16,17 +16,18 @@ Then, if you want to process the raw data, go to step A. If you want to start fr
 
 ## A. Start from the raw data
 This step will create the accumulated CSV and delta CSV by following the below instructions:     
-1- Copy the raw data inside your machine.  
+1- Download the raw data (https://github.com/sandialabs/proxy-parent-data/tree/main/SKX) inside your machine.  
 2- Go to the dataprocess directory in the repo.  
 &nbsp;&nbsp; a. $ cd dataprocess  
 3- Open dataprep.sh shell file and change the TopDataPrep variable (at the beginning of the file) to point to the raw data directory.   
 4- Perform $ chmod +x dataprep.sh  
-5- Run the shell file ./dataprep.sh to get two csv directories csv_acc and csv_std, inside the dataprocess directory, that contains the all ranks average and standard deviation data. Notice, this step may take a long time (e.g. one or two days) to build two csv directories.  
+5- Run the shell file ./dataprep.sh to get two csv directories csv_acc and csv_std, inside the SimEngine directory, that contains the all ranks average and standard deviation data. Notice, this step may take a long time (e.g. one or two days) to build two csv directories.  
 6- Follow steps in B.       
 
-## B. Use the existing CSV directory to analysis  
+## B. Use the processed CSV directory to analysis  
 1- Go to the SimEngine directory in the top of the repo.  $ cd SimEngine/  
-2- $ python main.py  
-3- You can find the analysis output figures inside the graphs directory.
+2- Download the two csv directories from https://github.com/sandialabs/proxy-parent-data/tree/main/ProcessedData/SKX. (If you start from Step A, you do not need to download again.)     
+3- $ python main.py  
+4- You can find the analysis output figures inside the graphs directory.
 
 

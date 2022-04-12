@@ -53,5 +53,5 @@ done
 # Build csv for overall features and subgroup features
 # Save the result in new directory ./csv_acc and csv_std
 # ./csv_acc is the final average, csv_std is the standard deviation 
-python buildcsv.py ./acc/output ./csv_acc
-python buildcsv.py ./del/output ./csv_std
+python buildcsv.py ./acc/output ../SimEngine/csv_acc
+python buildcsv.py ./del/output ../SimEngine/csv_std

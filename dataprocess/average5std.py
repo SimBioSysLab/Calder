@@ -5,18 +5,18 @@ import pandas as pd
 
 def average_5file(dirname,appname,output):
     # Get the mean of 5 run's std 
-	files = os.listdir(dirname)
+    files = os.listdir(dirname)
 
-	X = pd.DataFrame()
-	for i,f in enumerate(files):
-	    if f.startswith(appname+"_"):
-	        X1 = pd.read_csv(dirname+'/'+f,header = 0)
-	        p = X1.iloc[:].std(axis=0)
-	        X = X.append(p,ignore_index=True)
-	Y = X.mean(axis=0)
-        Y.to_csv(output+"/"+appname+"_"+dirname[6:]+'.csv')
+    X = pd.DataFrame()
+    for i,f in enumerate(files):
+        if f.startswith(appname+"_"):
+            X1 = pd.read_csv(dirname+'/'+f,header = 0)
+            p = X1.iloc[:].std(axis=0)
+            X = X.append(p,ignore_index=True)
+    Y = X.mean(axis=0)
+    Y.to_csv(output+"/"+appname+"_"+dirname[6:]+'.csv')
    
-	return
+    return
 
 
 if __name__ == "__main__":

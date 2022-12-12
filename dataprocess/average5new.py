@@ -12,10 +12,9 @@ def average_5file(dirname,appname,output):
         if f.startswith(appname+"_"):
             X1 = pd.read_csv(dirname+'/'+f,header = 0)
             p = X1.iloc[-5:].mean(axis=0)
-            X = X.append(p,ignore_index=True)
+            X = pd.concat([X,pd.DataFrame([p])],axis=0,ignore_index=True)
     Y = X.mean(axis=0)
-
-    Y.to_csv(output+"/"+appname+"_"+dirname[6:]+'.csv')
+    Y.to_csv(output+"/"+appname+"_"+dirname[6:]+'.csv',header=False)
    
     return
 

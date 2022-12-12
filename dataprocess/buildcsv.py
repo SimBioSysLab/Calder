@@ -17,12 +17,13 @@ def build_csv(groupname,output,csv_dir):
         X = pd.DataFrame()
         for i,f in enumerate(files):
             if f.startswith(app+"_") and groupname in f:
-                X1 = pd.read_csv(output+"/"+f,header=None, index_col = 0)
-                X = X.append(X1)
+                X1 = pd.read_csv(output+"/"+f, header=None,index_col = 0)
+                X = pd.concat([X,X1],axis=0)
         # drop the duplicated event name
         X = X[~X.index.duplicated(keep='first')]
         X = X.rename(columns={1: app})
-        allapps = allapps.append(X.T)
+        allapps = pd.concat([allapps,X],axis=1)
+    allapps=allapps.T
     allapps.to_csv(csv_dir+"/SKX_"+groupname+".csv")
 
 def build_memory_csv(output,csv_dir):
@@ -32,19 +33,18 @@ def build_memory_csv(output,csv_dir):
         for i,f in enumerate(files):
             if f.startswith(app+"_") and "Memory" in f and "Memory_" not in f:
                 X1 = pd.read_csv(output+"/"+f,header=None, index_col = 0)
-                X = X.append(X1)
+                X = pd.concat([X,X1],axis=0)
         # drop the duplicated event name
         X = X[~X.index.duplicated(keep='first')]
         X = X.rename(columns={1: app})
-        allapps = allapps.append(X.T)
+        allapps = pd.concat([allapps,X],axis=1)
+    allapps=allapps.T
     allapps.to_csv(csv_dir+"/SKX_Memory.csv")
 
 
 if __name__ == "__main__":
     appnames = ["ExaMiniMD", "LAMMPS", "sw4lite", "sw4", "SWFFT", "HACC", "MiniQMC", "QMCPack", "miniVite", "vite", "Nekbone", "Nek5000", "XSBench", "openmc", "picsarlite", "picsar", "amg2013", "Castro", "Laghos", "pennant", "snap", "hpcc_dgemm", "hpcc_random", "hpcc_streams", "hpcg"]
-    groups = ["Branch","DecodeIssue_Pipeline","Dispatch_Pipeline","Execution_Pipeline",
-    "Frontend","Instruction_Cache","Instruction_Mix","L1_D_Cache",
-    "L2_D_Cache","L3_D_Cache","Memory_Pipeline","Misc","Power","Retirement_Pipeline"]
+    groups = ["Branch","DecodeIssue_Pipeline","Dispatch_Pipeline","Execution_Pipeline","Frontend","Instruction_Cache","Instruction_Mix","L1_D_Cache","L2_D_Cache","L3_D_Cache","Memory_Pipeline","Misc","Power","Retirement_Pipeline"]
     args = sys.argv[1:]
     output = args[0]
     files = os.listdir(output)

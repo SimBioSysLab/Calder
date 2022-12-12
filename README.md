@@ -8,6 +8,7 @@ Python 3
 Numpy  
 Scipy  
 Scikit-learn  
+pandas version = 1.4.4
 
 # How to run SimEngine
 Clone the repository to your computing platform. $ git clone https://github.com/SimBioSysLab/SimEngine

@@ -7,7 +7,7 @@
 # Directory acc is the accumulated hardware events counts.
 # Directory del is the delta hardware events counts (per second)
 
-TopDataPrep={path to the raw data}
+TopDataPrep={path to the raw data}  # default path: ../data
 pathdirs=$(ls $TopDataPrep)
 mkdir -p ./acc
 mkdir -p ./del
